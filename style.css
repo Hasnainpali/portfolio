@@ -389,6 +389,16 @@ body {
   margin: 0 0 6px 0
 }
 
+.content ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.content li {
+  margin-bottom: 6px;
+}
+
 /* CONTACT */
 .contact-grid {
   display: grid;
