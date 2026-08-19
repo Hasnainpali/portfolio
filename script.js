@@ -3,51 +3,55 @@
 ========================================= */
 
 const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+const nav = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
 
-if (hamburger && navMenu) {
+
+if (hamburger && nav) {
 
   hamburger.addEventListener("click", () => {
 
-    const isOpen = navMenu.classList.toggle("open");
-
-    hamburger.classList.toggle("active", isOpen);
+    const isOpen = nav.classList.toggle("open");
 
     hamburger.setAttribute(
       "aria-expanded",
       isOpen
     );
 
-    document.body.classList.toggle(
-      "menu-open",
-      isOpen
-    );
-
   });
 
 
-  /* Close menu when clicking nav link */
-
-  const navLinks = navMenu.querySelectorAll("a");
-
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
-      navMenu.classList.remove("open");
-
-      hamburger.classList.remove("active");
+      nav.classList.remove("open");
 
       hamburger.setAttribute(
         "aria-expanded",
         "false"
       );
 
-      document.body.classList.remove(
-        "menu-open"
+    });
+
+  });
+
+
+  document.addEventListener("click", (event) => {
+
+    if (
+      !nav.contains(event.target) &&
+      !hamburger.contains(event.target)
+    ) {
+
+      nav.classList.remove("open");
+
+      hamburger.setAttribute(
+        "aria-expanded",
+        "false"
       );
 
-    });
+    }
 
   });
 
@@ -58,59 +62,67 @@ if (hamburger && navMenu) {
    TYPING EFFECT
 ========================================= */
 
-const typedElement = document.getElementById("typed");
+const typedEl = document.getElementById("typed");
 
 const words = [
-  "React applications",
-  "modern dashboards",
-  "responsive interfaces",
-  "scalable frontend systems"
+  "React Developer",
+  "Frontend Engineer",
+  "UI / UX Focused Developer",
+  "Web Application Builder"
 ];
 
 let wordIndex = 0;
-let characterIndex = 0;
+let charIndex = 0;
 let deleting = false;
 
 
-function typeEffect() {
+function typeLoop() {
 
-  if (!typedElement) return;
+  if (!typedEl) return;
 
-  const currentWord = words[wordIndex];
+
+  const currentWord =
+    words[wordIndex];
+
 
   if (!deleting) {
 
-    characterIndex++;
+    charIndex++;
 
-    typedElement.textContent =
-      currentWord.substring(
+    typedEl.textContent =
+      currentWord.slice(
         0,
-        characterIndex
+        charIndex
       );
 
+
     if (
-      characterIndex ===
+      charIndex ===
       currentWord.length
     ) {
 
       deleting = true;
 
-      setTimeout(typeEffect, 1400);
+      setTimeout(
+        typeLoop,
+        1400
+      );
 
       return;
     }
 
   } else {
 
-    characterIndex--;
+    charIndex--;
 
-    typedElement.textContent =
-      currentWord.substring(
+    typedEl.textContent =
+      currentWord.slice(
         0,
-        characterIndex
+        charIndex
       );
 
-    if (characterIndex === 0) {
+
+    if (charIndex === 0) {
 
       deleting = false;
 
@@ -122,13 +134,16 @@ function typeEffect() {
 
   }
 
-  const speed = deleting ? 45 : 75;
 
-  setTimeout(typeEffect, speed);
+  setTimeout(
+    typeLoop,
+    deleting ? 45 : 75
+  );
+
 }
 
 
-typeEffect();
+typeLoop();
 
 
 /* =========================================
@@ -141,10 +156,9 @@ const revealElements =
 
 const revealObserver =
   new IntersectionObserver(
-
     (entries, observer) => {
 
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
 
         if (entry.isIntersecting) {
 
@@ -161,15 +175,13 @@ const revealObserver =
       });
 
     },
-
     {
       threshold: 0.12
     }
-
   );
 
 
-revealElements.forEach(element => {
+revealElements.forEach((element) => {
 
   revealObserver.observe(element);
 
@@ -183,184 +195,79 @@ revealElements.forEach(element => {
 const sections =
   document.querySelectorAll("section[id]");
 
-const navigationLinks =
-  document.querySelectorAll(
-    ".nav a[href^='#']"
-  );
 
+const sectionObserver =
+  new IntersectionObserver(
+    (entries) => {
 
-function updateActiveNavigation() {
+      entries.forEach((entry) => {
 
-  let currentSection = "";
-
-  const scrollPosition =
-    window.scrollY + 180;
-
-
-  sections.forEach(section => {
-
-    const sectionTop =
-      section.offsetTop;
-
-    const sectionHeight =
-      section.offsetHeight;
-
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition <
-        sectionTop + sectionHeight
-    ) {
-
-      currentSection =
-        section.getAttribute("id");
-
-    }
-
-  });
-
-
-  navigationLinks.forEach(link => {
-
-    link.classList.remove("active");
-
-    const href =
-      link.getAttribute("href");
-
-    if (
-      href === `#${currentSection}`
-    ) {
-
-      link.classList.add("active");
-
-    }
-
-  });
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateActiveNavigation,
-  {
-    passive: true
-  }
-);
-
-
-window.addEventListener(
-  "load",
-  updateActiveNavigation
-);
-
-
-/* =========================================
-   NAVBAR SCROLL EFFECT
-========================================= */
-
-const header =
-  document.querySelector(".site-header");
-
-
-function updateHeader() {
-
-  if (!header) return;
-
-  if (window.scrollY > 30) {
-
-    header.classList.add("scrolled");
-
-  } else {
-
-    header.classList.remove("scrolled");
-
-  }
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateHeader,
-  {
-    passive: true
-  }
-);
-
-
-/* =========================================
-   IMAGE FALLBACK
-========================================= */
-
-document
-  .querySelectorAll("img")
-  .forEach(image => {
-
-    image.addEventListener(
-      "error",
-      () => {
-
-        if (
-          image.dataset.fallbackApplied
-        ) {
+        if (!entry.isIntersecting) {
           return;
         }
 
-        image.dataset.fallbackApplied =
-          "true";
 
-        image.src =
-          "https://via.placeholder.com/800x500?text=Project";
+        const id =
+          entry.target.getAttribute("id");
 
-      }
-    );
 
-  });
+        navLinks.forEach((link) => {
+
+          link.classList.remove(
+            "active"
+          );
+
+
+          if (
+            link.getAttribute("href") ===
+            `#${id}`
+          ) {
+
+            link.classList.add(
+              "active"
+            );
+
+          }
+
+        });
+
+      });
+
+    },
+    {
+      rootMargin:
+        "-35% 0px -55% 0px"
+    }
+  );
+
+
+sections.forEach((section) => {
+
+  sectionObserver.observe(section);
+
+});
 
 
 /* =========================================
-   CURRENT YEAR
+   CLOSE MOBILE MENU ON RESIZE
 ========================================= */
 
-const currentYear =
-  new Date().getFullYear();
-
-const footerText =
-  document.querySelector(".footer p");
-
-if (footerText) {
-
-  footerText.textContent =
-    `© ${currentYear} Hasnain Iqbal`;
-
-}
-
-
-/* =========================================
-   ESCAPE KEY
-========================================= */
-
-document.addEventListener(
-  "keydown",
-  event => {
+window.addEventListener(
+  "resize",
+  () => {
 
     if (
-      event.key === "Escape" &&
-      navMenu &&
-      navMenu.classList.contains("open")
+      window.innerWidth > 720 &&
+      nav
     ) {
 
-      navMenu.classList.remove("open");
-
-      hamburger.classList.remove("active");
-
-      hamburger.setAttribute(
-        "aria-expanded",
-        "false"
+      nav.classList.remove(
+        "open"
       );
 
-      document.body.classList.remove(
-        "menu-open"
+      hamburger?.setAttribute(
+        "aria-expanded",
+        "false"
       );
 
     }
