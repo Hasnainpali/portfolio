@@ -2,337 +2,1120 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description"
-    content="React Frontend Developer portfolio of Hasnain Iqbal. Building scalable, responsive, and high-performance web applications for startups and businesses." />
-  <title>Hasnain Iqbal | React Frontend Developer</title>
+    content="Hasnain Iqbal is a React Frontend Developer building modern, scalable and high-performance web applications." />
+
+  <meta name="keywords"
+    content="Hasnain Iqbal, React Developer, Frontend Developer, JavaScript Developer, Next.js Developer, Pakistan" />
+
+  <meta name="author" content="Hasnain Iqbal" />
+
+  <meta property="og:title" content="Hasnain Iqbal | Frontend Developer" />
+  <meta property="og:description"
+    content="Frontend Developer building modern digital experiences with React, JavaScript and modern UI architecture." />
+  <meta property="og:type" content="website" />
+
+  <title>Hasnain Iqbal | Frontend Developer</title>
+
+  <link rel="icon" href="icon/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="icon/favicon.png" type="image/x-icon">
 </head>
 
 <body>
+
+  <!-- BACKGROUND -->
+  <div class="background">
+    <div class="grid-bg"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+  </div>
+
+  <!-- NAVBAR -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home">Hasnain<span>.Dev</span></a>
+
+    <div class="container nav-container">
+
+      <a href="#home" class="brand">
+        Hasnain<span>.Dev</span>
+      </a>
 
       <nav class="nav" id="navMenu">
-        <a href="#home">Home</a>
+
+        <a href="#home" class="active">Home</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#contact">Contact</a>
+
+        <a href="#contact" class="nav-talk">
+          Let's Talk <span>↗</span>
+        </a>
+
       </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
     </div>
+
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero container grid-2">
-    <div class="hero-left">
-      <h3 class="eyebrow">React Frontend Developer</h3>
-      <h1 class="hero-title">Hasnain Iqbal</h1>
-      <p class="hero-sub">I help companies ship modern, high-converting, and scalable frontend products using React,
-        JavaScript, and clean UI architecture.</p>
 
-      <div class="hero-meta">
-        <div class="typed-wrap"> <span id="typed"></span><span class="cursor">|</span></div>
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary">View Case Studies</a>
-          <a href="./download/Hasnain%20React%20Developer%20Resume.pdf" class="btn ghost"
-            download="Hasnain-Iqbal-React-Developer-CV.pdf">Download CV</a>
-          <a href="https://github.com/Hasnainpali" aria-label="github" class="btn ghost" target="_blank"
-            rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/hasnain-frontend-developer/" aria-label="linkedin" class="btn ghost"
-            target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
+  <main>
 
+    <!-- HERO -->
+    <section id="home" class="hero">
 
-      <ul class="stats" style="padding-top: 10px;">
-        <li><strong>2+</strong><span>Years Experience</span></li>
-        <li><strong>10+</strong><span>Production Features Delivered</span></li>
-        <li>
-          <strong style="font-size: medium; padding: 2px;">Full Time / Contract / Remote</strong>
-          <span>Open to Opportunities</span>
-        </li>
-      </ul>
-    </div>
+      <div class="container hero-grid">
 
-    <div class="hero-right">
-      <!-- replace with your professional photo -->
-      <div class="profile-card">
-        <img src="images/image.png" alt="Hasnain Iqbal"
-          onerror="this.src='https://via.placeholder.com/360x360?text=Profile'" />
-        <div class="profile-badge">
-          <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React" />
-          <span>React • Frontend</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-content reveal">
 
-  <!-- SKILLS -->
-  <section id="skills" class="section container">
-    <h2 class="section-title">Core Skills</h2>
-    <p class="section-sub">Tools and technologies I use to deliver reliable, maintainable, and business-focused
-      frontend products.</p>
+          <div class="availability">
+            <span class="availability-dot"></span>
+            Available for opportunities
+          </div>
 
-    <div class="skills-grid">
-      <!-- icon + progress -->
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
-          <h4>HTML5</h4>
-        </div>
-        <div class="progress" data-value="95">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
-          <h4>CSS3</h4>
-        </div>
-        <div class="progress" data-value="90">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JS" />
-          <h4>JavaScript</h4>
-        </div>
-        <div class="progress" data-value="88">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React" />
-          <h4>React.js</h4>
-        </div>
-        <div class="progress" data-value="90">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/antdesign.svg" alt="Ant Design" />
-          <h4>Ant Design</h4>
-        </div>
-        <div class="progress" data-value="82">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-top">
-          <img src="https://redux.js.org/img/redux.svg" alt="Redux" />
-          <h4>Redux Toolkit</h4>
-        </div>
-        <div class="progress" data-value="80">
-          <div class="progress-bar"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section container">
-    <h2 class="section-title">Selected Work</h2>
-    <p class="section-sub">Projects that demonstrate real-world problem solving, clean implementation, and measurable
-      product value.</p>
-
-    <div class="projects-grid">
-      <!-- project 1 -->
-      <article class="project-card">
-        <img src="images/Shuttering.png" alt="Shuttering Patti"
-          onerror="this.src='https://via.placeholder.com/800x450?text=Project'" />
-        <div class="project-overlay">
-          <h3>Shuttering Patti Website</h3>
-          <p>
-            Modern and responsive steel shuttering patti business website
-            featuring product showcase, gallery popup, WhatsApp integration,
-            smooth scrolling navigation, and contact inquiry section.
-            Designed with a professional industrial UI for construction clients.
+          <p class="eyebrow">
+            FRONTEND DEVELOPER
           </p>
-          <div class="project-meta">
-            <span>HTML • Tailwind CSS • JavaScript</span>
-            <div class="project-cta">
-              <a href="https://shuttering-patti.vercel.app/" class="btn small" target="_blank"
-                rel="noopener noreferrer">Live</a>
-              <a href="https://github.com/Hasnainpali/Shuttering_Patti" class="btn small ghost" target="_blank"
-                rel="noopener noreferrer">Repo</a>
-            </div>
+
+          <h1>
+            Building digital
+            <span class="gradient-text">experiences</span>
+            that feel different.
+          </h1>
+
+          <p class="hero-description">
+            I build modern, responsive and scalable web applications
+            using React, JavaScript and clean UI architecture.
+          </p>
+
+          <div class="typed-line">
+            <span class="typed-prefix">I specialize in</span>
+            <span id="typed"></span>
+            <span class="cursor"></span>
+          </div>
+
+          <div class="hero-actions">
+
+            <a href="#projects" class="btn btn-primary">
+              View My Work
+              <span>↗</span>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Let's Talk
+            </a>
+
+          </div>
+
+          <div class="social-links">
+
+            <a href="https://github.com/Hasnainpali"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/hasnain-frontend-developer/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a href="mailto:hasnainpali321@gmail.com">
+              Email ↗
+            </a>
+
           </div>
 
         </div>
-      </article>
 
-      <!-- project 2 -->
-      <article class="project-card">
-        <img src="images/Jubliee.jpg" alt="Jubilee"
-          onerror="this.src='https://via.placeholder.com/800x450?text=Project'" />
-        <div class="project-overlay">
-          <h3>Jubilee Life Insurance</h3>
-          <p>Enterprise-grade admin panel for policy and claim management. Built secure workflows and responsive
-            dashboards to help teams process requests faster with better visibility.</p>
-          <div class="project-meta">
-            <span>• React • Material UI • Bootstrap </span>
-            <div class="project-cta">
-              <a href="https://insurance.jubileegeneral.com/login" class="btn small" target="_blank"
-                rel="noopener noreferrer">Live</a>
+
+        <!-- HERO VISUAL -->
+        <div class="hero-visual reveal">
+
+          <div class="visual-glow"></div>
+
+          <div class="profile-window">
+
+            <div class="window-header">
+
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <span class="window-title">
+                hasnain.dev
+              </span>
+
+              <span class="window-menu">•••</span>
+
             </div>
+
+            <div class="profile-image-wrapper">
+
+              <img
+                src="images/image.png"
+                alt="Hasnain Iqbal - Frontend Developer"
+                onerror="this.src='https://via.placeholder.com/600x700?text=Hasnain+Iqbal'"
+              />
+
+              <div class="floating-card react-card">
+                <span class="tech-icon">⚛</span>
+                <div>
+                  <strong>React</strong>
+                  <small>Frontend</small>
+                </div>
+              </div>
+
+              <div class="floating-card code-card">
+                <span>&lt;/&gt;</span>
+                <div>
+                  <strong>Clean Code</strong>
+                  <small>Scalable UI</small>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="hero-code">
+
+            <div class="code-line">
+              <span class="code-purple">const</span>
+              <span class="code-blue">developer</span>
+              <span>=</span>
+              <span>{</span>
+            </div>
+
+            <div class="code-line indent">
+              <span class="code-key">name:</span>
+              <span class="code-green">"Hasnain"</span>
+            </div>
+
+            <div class="code-line indent">
+              <span class="code-key">stack:</span>
+              <span class="code-green">"React + JS"</span>
+            </div>
+
+            <div class="code-line">
+              <span>}</span>
+            </div>
+
           </div>
 
         </div>
-      </article>
 
-      <!-- project 3 -->
-      <article class="project-card">
-        <img src="images/Soneri.png" alt="Soneri Business Now"
-          onerror="this.src='https://via.placeholder.com/800x450?text=Project'" />
-        <div class="project-overlay">
-          <h3>Soneri Business Now</h3>
-          <p>Digital banking web experience with performance-optimized React UI and secure API integrations. Designed
-            reusable components aligned with banking UX standards and cross-browser compatibility.</p>
-          <div class="project-meta">
-            <span>• React • Ant Design • Tailwind CSS </span>
-            <div class="project-cta">
-              <a href="https://businessnow-qa.cloudasset.com/login" class="btn small" target="_blank"
-                rel="noopener noreferrer">Live</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- project 4 -->
-      <article class="project-card">
-        <img src="images/Admin-Panel.png" alt="Admin Panel"
-          onerror="this.src='https://via.placeholder.com/800x450?text=Project'" />
-        <div class="project-overlay">
-          <h3>Admin Panel Dashboard</h3>
-          <p>Scalable admin dashboard with role-based screens, analytics widgets, and data tables. Focused on modular
-            architecture, maintainable components, and smooth UI performance.</p>
-          <div class="project-meta">
-            <span>React • Material UI • Bootstrap • Node.Js</span>
-            <div class="project-cta">
-              <a href="https://admin-dashboard-e-commerce-phi.vercel.app/signin" class="btn small" target="_blank"
-                rel="noopener noreferrer">Live</a>
-              <a href="https://github.com/Hasnainpali/Admin-Dashboard-E-Commerce" class="btn small ghost"
-                target="_blank" rel="noopener noreferrer">Repo</a>
-            </div>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- project 5 -->
-      <article class="project-card">
-        <img src="images/Mern.jpg" alt="MERN E-commerce"
-          onerror="this.src='https://via.placeholder.com/800x450?text=Project'" />
-        <div class="project-overlay">
-          <h3>MERN E-commerce Store</h3>
-          <p>Full-stack e-commerce application with authentication, product flows, cart, and order-ready interface.
-            Developed with a clean, reusable architecture to support future scaling.</p>
-          <div class="project-meta">
-            <span>React • Node.js • MongoDB</span>
-            <div class="project-cta">
-              <a href="https://mern-stack-e-commerce-website.vercel.app/" class="btn small" target="_blank"
-                rel="noopener noreferrer">Live</a>
-              <a href="https://github.com/Hasnainpali/Mern_StacK-E-Commerce-Website" class="btn small ghost"
-                target="_blank" rel="noopener noreferrer">Repo</a>
-            </div>
-          </div>
-
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section container">
-    <h2 class="section-title">Experience</h2>
-    <p class="section-sub">Hands-on experience building production-ready React applications for finance and business
-      domains.</p>
-
-    <div class="timeline">
-
-      <!-- EXPERIENCE 1 -->
-      <div class="timeline-item">
-        <div class="time">Jan 2024 — Present</div>
-        <div class="content">
-          <h4>React Developer • P3 Financial Group</h4>
-          <ul>
-            <li>Built and maintained responsive, production-grade React applications for financial products.</li>
-            <li>Integrated REST APIs and improved frontend data handling for faster and more reliable user flows.</li>
-            <li>Optimized performance, code reusability, and UI consistency across multiple client-facing modules.</li>
-            <li>Collaborated closely with QA and backend teams to reduce bugs and speed up release cycles.</li>
-          </ul>
-        </div>
       </div>
 
-      <!-- EXPERIENCE 2 -->
-      <div class="timeline-item">
-        <div class="time">Sep 2023 — Dec 2023</div>
-        <div class="content">
-          <h4>React Developer Intern • P3 Financial Group</h4>
-          <ul>
-            <li>Delivered dashboard and UI components with React.js, Material UI, and Bootstrap.</li>
-            <li>Integrated APIs, improved cross-browser support, and optimized page speed on existing modules.</li>
-            <li>Contributed in code reviews and debugging sessions with senior engineers on client projects.</li>
-          </ul>
+
+      <!-- HERO STATS -->
+      <div class="container stats">
+
+        <div class="stat">
+          <strong>2+</strong>
+          <span>Years Experience</span>
         </div>
+
+        <div class="stat">
+          <strong>10+</strong>
+          <span>Production Features</span>
+        </div>
+
+        <div class="stat">
+          <strong>5+</strong>
+          <span>Featured Projects</span>
+        </div>
+
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Responsive UI</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECH STACK -->
+    <section id="skills" class="section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">01</span>
+
+          <div>
+            <p class="eyebrow">TECHNOLOGIES</p>
+
+            <h2>
+              Tools I use to
+              <span class="gradient-text">build.</span>
+            </h2>
+
+            <p>
+              A practical stack focused on performance,
+              maintainability and excellent user experience.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol html">HTML</div>
+            <div>
+              <h3>HTML5</h3>
+              <p>Semantic & accessible markup</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol css">CSS</div>
+            <div>
+              <h3>CSS3</h3>
+              <p>Responsive modern styling</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol js">JS</div>
+            <div>
+              <h3>JavaScript</h3>
+              <p>Modern ES6+ development</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol react">⚛</div>
+            <div>
+              <h3>React.js</h3>
+              <p>Scalable component architecture</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol redux">R</div>
+            <div>
+              <h3>Redux Toolkit</h3>
+              <p>Predictable state management</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol antd">A</div>
+            <div>
+              <h3>Ant Design</h3>
+              <p>Enterprise UI development</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol node">N</div>
+            <div>
+              <h3>Node.js</h3>
+              <p>Backend & API integration</p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-symbol mongo">M</div>
+            <div>
+              <h3>MongoDB</h3>
+              <p>Database integration</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section services-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">02</span>
+
+          <div>
+
+            <p class="eyebrow">WHAT I DO</p>
+
+            <h2>
+              From idea to
+              <span class="gradient-text">interface.</span>
+            </h2>
+
+            <p>
+              I turn business requirements into clean,
+              functional and polished digital products.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+
+            <span class="service-number">01</span>
+
+            <div class="service-icon">◈</div>
+
+            <h3>Frontend Development</h3>
+
+            <p>
+              Production-ready React interfaces with reusable
+              components, clean architecture and responsive layouts.
+            </p>
+
+            <div class="service-tags">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>REST API</span>
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <span class="service-number">02</span>
+
+            <div class="service-icon">◉</div>
+
+            <h3>Dashboard Development</h3>
+
+            <p>
+              Powerful admin dashboards with tables, filters,
+              forms, analytics and role-based workflows.
+            </p>
+
+            <div class="service-tags">
+              <span>Ant Design</span>
+              <span>MUI</span>
+              <span>Redux</span>
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <span class="service-number">03</span>
+
+            <div class="service-icon">✦</div>
+
+            <h3>UI Implementation</h3>
+
+            <p>
+              Pixel-focused implementation of modern designs
+              with responsive behavior across all devices.
+            </p>
+
+            <div class="service-tags">
+              <span>Responsive</span>
+              <span>UI/UX</span>
+              <span>CSS</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">03</span>
+
+          <div>
+
+            <p class="eyebrow">SELECTED WORK</p>
+
+            <h2>
+              Things I've
+              <span class="gradient-text">built.</span>
+            </h2>
+
+            <p>
+              A selection of personal and production projects
+              focused on real-world problems.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="projects-list">
+
+
+          <!-- PROJECT 01 -->
+          <article class="project reveal">
+
+            <div class="project-image">
+
+              <img
+                src="images/Shuttering.png"
+                alt="Shuttering Patti Website"
+                onerror="this.src='https://via.placeholder.com/1000x600?text=Shuttering+Patti'"
+              />
+
+              <div class="project-overlay-number">
+                01
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  BUSINESS WEBSITE
+                </span>
+
+                <span class="project-year">
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                Shuttering Patti
+              </h3>
+
+              <p>
+                Modern industrial business website designed to
+                showcase steel shuttering products with a clean
+                product-focused interface.
+              </p>
+
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>Tailwind CSS</span>
+                <span>JavaScript</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://shuttering-patti.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+
+                <a
+                  href="https://github.com/Hasnainpali/Shuttering_Patti"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+          <article class="project project-reverse reveal">
+
+            <div class="project-image">
+
+              <img
+                src="images/Jubliee.jpg"
+                alt="Jubilee Life Insurance Admin Panel"
+                onerror="this.src='https://via.placeholder.com/1000x600?text=Jubilee'"
+              />
+
+              <div class="project-overlay-number">
+                02
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  ENTERPRISE APPLICATION
+                </span>
+
+                <span class="project-year">
+                  Production
+                </span>
+
+              </div>
+
+              <h3>
+                Jubilee Life Insurance
+              </h3>
+
+              <p>
+                Enterprise admin panel for policy and claim
+                management with responsive dashboards and
+                structured business workflows.
+              </p>
+
+              <div class="project-tags">
+                <span>React</span>
+                <span>Material UI</span>
+                <span>Bootstrap</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://insurance.jubileegeneral.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+          <article class="project reveal">
+
+            <div class="project-image">
+
+              <img
+                src="images/Soneri.png"
+                alt="Soneri Business Now"
+                onerror="this.src='https://via.placeholder.com/1000x600?text=Business+Now'"
+              />
+
+              <div class="project-overlay-number">
+                03
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  FINTECH / BANKING
+                </span>
+
+                <span class="project-year">
+                  Production
+                </span>
+
+              </div>
+
+              <h3>
+                Soneri Business Now
+              </h3>
+
+              <p>
+                Digital banking experience built with reusable
+                React components, enterprise UI patterns and
+                secure API-driven workflows.
+              </p>
+
+              <div class="project-tags">
+                <span>React</span>
+                <span>Ant Design</span>
+                <span>Tailwind CSS</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://businessnow-qa.cloudasset.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+          <article class="project project-reverse reveal">
+
+            <div class="project-image">
+
+              <img
+                src="images/Admin-Panel.png"
+                alt="Admin Dashboard"
+                onerror="this.src='https://via.placeholder.com/1000x600?text=Admin+Dashboard'"
+              />
+
+              <div class="project-overlay-number">
+                04
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  DASHBOARD
+                </span>
+
+                <span class="project-year">
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                Admin Dashboard
+              </h3>
+
+              <p>
+                Scalable admin dashboard featuring role-based
+                screens, analytics widgets, data tables and
+                reusable UI architecture.
+              </p>
+
+              <div class="project-tags">
+                <span>React</span>
+                <span>Material UI</span>
+                <span>Node.js</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://admin-dashboard-e-commerce-phi.vercel.app/signin"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+
+                <a
+                  href="https://github.com/Hasnainpali/Admin-Dashboard-E-Commerce"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 05 -->
+          <article class="project reveal">
+
+            <div class="project-image">
+
+              <img
+                src="images/Mern.jpg"
+                alt="MERN E-commerce Store"
+                onerror="this.src='https://via.placeholder.com/1000x600?text=MERN+E-Commerce'"
+              />
+
+              <div class="project-overlay-number">
+                05
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-category">
+                  FULL STACK
+                </span>
+
+                <span class="project-year">
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                MERN E-commerce
+              </h3>
+
+              <p>
+                Full-stack shopping experience with authentication,
+                product management, cart functionality and
+                scalable application architecture.
+              </p>
+
+              <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+
+              <div class="project-links">
+
+                <a
+                  href="https://mern-stack-e-commerce-website.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Live Website ↗
+                </a>
+
+                <a
+                  href="https://github.com/Hasnainpali/Mern_StacK-E-Commerce-Website"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  GitHub ↗
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">04</span>
+
+          <div>
+
+            <p class="eyebrow">EXPERIENCE</p>
+
+            <h2>
+              Where I've
+              <span class="gradient-text">worked.</span>
+            </h2>
+
+            <p>
+              Experience building production applications
+              for finance and business domains.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="experience-list">
+
+
+          <article class="experience-item reveal">
+
+            <div class="experience-date">
+              Jan 2024 — Present
+            </div>
+
+            <div class="experience-line">
+              <span></span>
+            </div>
+
+            <div class="experience-content">
+
+              <div class="experience-heading">
+
+                <div>
+
+                  <h3>
+                    React Developer
+                  </h3>
+
+                  <p>
+                    P3 Financial Group
+                  </p>
+
+                </div>
+
+                <span class="experience-badge">
+                  Full Time
+                </span>
+
+              </div>
+
+              <ul>
+
+                <li>
+                  Built and maintained production-grade React
+                  applications for financial products.
+                </li>
+
+                <li>
+                  Integrated REST APIs and improved frontend
+                  data handling across business workflows.
+                </li>
+
+                <li>
+                  Developed reusable components and maintained
+                  consistent UI architecture.
+                </li>
+
+                <li>
+                  Collaborated with QA and backend teams to
+                  improve releases and reduce frontend issues.
+                </li>
+
+              </ul>
+
+              <div class="experience-tags">
+                <span>React</span>
+                <span>Redux Toolkit</span>
+                <span>Ant Design</span>
+                <span>REST APIs</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="experience-item reveal">
+
+            <div class="experience-date">
+              Sep 2023 — Dec 2023
+            </div>
+
+            <div class="experience-line">
+              <span></span>
+            </div>
+
+            <div class="experience-content">
+
+              <div class="experience-heading">
+
+                <div>
+
+                  <h3>
+                    React Developer Intern
+                  </h3>
+
+                  <p>
+                    P3 Financial Group
+                  </p>
+
+                </div>
+
+                <span class="experience-badge">
+                  Internship
+                </span>
+
+              </div>
+
+              <ul>
+
+                <li>
+                  Built reusable dashboard and UI components
+                  using React.js.
+                </li>
+
+                <li>
+                  Integrated APIs and worked on responsive
+                  frontend modules.
+                </li>
+
+                <li>
+                  Contributed to debugging, code reviews and
+                  frontend improvements.
+                </li>
+
+              </ul>
+
+              <div class="experience-tags">
+                <span>React</span>
+                <span>Material UI</span>
+                <span>Bootstrap</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <div class="contact-content">
+
+            <p class="eyebrow">
+              HAVE A PROJECT?
+            </p>
+
+            <h2>
+              Let's build something
+              <span class="gradient-text">great.</span>
+            </h2>
+
+            <p>
+              Whether you're looking for a frontend developer,
+              building a startup product, or need a modern
+              business website — let's talk.
+            </p>
+
+            <div class="contact-buttons">
+
+              <a
+                href="mailto:hasnainpali321@gmail.com"
+                class="btn btn-primary">
+                Start a Conversation ↗
+              </a>
+
+              <a
+                href="./download/Hasnain%20React%20Developer%20Resume.pdf"
+                class="btn btn-secondary"
+                download="Hasnain-Iqbal-React-Developer-CV.pdf">
+                Download CV
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-info">
+
+            <div>
+              <span>Email</span>
+              <a href="mailto:hasnainpali321@gmail.com">
+                hasnainpali321@gmail.com
+              </a>
+            </div>
+
+            <div>
+              <span>Location</span>
+              <p>Karachi, Pakistan</p>
+            </div>
+
+            <div>
+              <span>Availability</span>
+              <p class="available-text">
+                ● Open to opportunities
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Hasnain Iqbal
+      </p>
+
+      <div>
+
+        <a
+          href="https://github.com/Hasnainpali"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/hasnain-frontend-developer/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn
+        </a>
+
+        <a href="mailto:hasnainpali321@gmail.com">
+          Email
+        </a>
+
       </div>
 
     </div>
-  </section>
 
-
-  <!-- CONTACT -->
-  <section id="contact" class="section container">
-    <h2 class="section-title">Let's Work Together</h2>
-    <p class="section-sub">If you are hiring a frontend developer or need help building a modern web product, I am
-      available for full-time and contract opportunities.</p>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Get in touch</h3>
-        <p><strong>Email:</strong> <a href="mailto:hasnainpali321@gmail.com">hasnainpali321@gmail.com</a></p>
-        <p><strong>Phone:</strong> +92 333 2830600</p>
-        <p><strong>Location:</strong> Karachi, Pakistan</p>
-        <p><strong>Response Time:</strong> Within 24 hours</p>
-      </div>
-
-      <form class="contact-form" action="https://formsubmit.co/hasnainpali321@gmail.com" method="POST">
-
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" rows="6" placeholder="Message..." required></textarea>
-
-        <!-- optional fields -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-
-        <button class="btn primary" type="submit">Send Project Inquiry</button>
-      </form>
-
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Hasnain Iqbal • React Frontend Developer</p>
-    </div>
   </footer>
 
+
   <script src="script.js"></script>
+
 </body>
 
 </html>
