@@ -1,75 +1,106 @@
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
+const header =
+  document.getElementById("siteHeader");
 
-const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("navMenu");
-const navLinks = document.querySelectorAll(".nav-link");
+const hamburger =
+  document.getElementById("hamburger");
 
+const nav =
+  document.getElementById("navMenu");
 
-if (hamburger && nav) {
+const navLinks =
+  document.querySelectorAll(".nav-link");
 
-  hamburger.addEventListener("click", () => {
+const progress =
+  document.getElementById("scrollProgress");
 
-    const isOpen = nav.classList.toggle("open");
+const backTop =
+  document.getElementById("backTop");
 
-    hamburger.setAttribute(
-      "aria-expanded",
-      isOpen
-    );
+const typedEl =
+  document.getElementById("typed");
 
-  });
-
-
-  navLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-      nav.classList.remove("open");
-
-      hamburger.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    });
-
-  });
+const yearEl =
+  document.getElementById("year");
 
 
-  document.addEventListener("click", (event) => {
+/* ================= YEAR ================= */
 
-    if (
-      !nav.contains(event.target) &&
-      !hamburger.contains(event.target)
-    ) {
+if (yearEl) {
+  yearEl.textContent =
+    new Date().getFullYear();
+}
 
-      nav.classList.remove("open");
 
-      hamburger.setAttribute(
-        "aria-expanded",
-        "false"
-      );
+/* ================= MOBILE MENU ================= */
 
-    }
+function closeMenu() {
 
-  });
+  nav?.classList.remove("open");
+
+  hamburger?.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 
 }
 
 
-/* =========================================
-   TYPING EFFECT
-========================================= */
+hamburger?.addEventListener(
+  "click",
+  (event) => {
 
-const typedEl = document.getElementById("typed");
+    event.stopPropagation();
+
+    const open =
+      nav.classList.toggle("open");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+
+  }
+);
+
+
+navLinks.forEach((link) => {
+
+  link.addEventListener(
+    "click",
+    closeMenu
+  );
+
+});
+
+
+document.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      nav &&
+      hamburger &&
+      !nav.contains(event.target) &&
+      !hamburger.contains(event.target)
+    ) {
+
+      closeMenu();
+
+    }
+
+  }
+);
+
+
+/* ================= TYPING ================= */
 
 const words = [
   "React Developer",
   "Frontend Engineer",
-  "UI / UX Focused Developer",
+  "UI-focused Developer",
   "Web Application Builder"
 ];
+
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -81,7 +112,7 @@ function typeLoop() {
   if (!typedEl) return;
 
 
-  const currentWord =
+  const word =
     words[wordIndex];
 
 
@@ -90,7 +121,7 @@ function typeLoop() {
     charIndex++;
 
     typedEl.textContent =
-      currentWord.slice(
+      word.slice(
         0,
         charIndex
       );
@@ -98,17 +129,18 @@ function typeLoop() {
 
     if (
       charIndex ===
-      currentWord.length
+      word.length
     ) {
 
       deleting = true;
 
       setTimeout(
         typeLoop,
-        1400
+        1500
       );
 
       return;
+
     }
 
   } else {
@@ -116,7 +148,7 @@ function typeLoop() {
     charIndex--;
 
     typedEl.textContent =
-      currentWord.slice(
+      word.slice(
         0,
         charIndex
       );
@@ -137,7 +169,7 @@ function typeLoop() {
 
   setTimeout(
     typeLoop,
-    deleting ? 45 : 75
+    deleting ? 42 : 72
   );
 
 }
@@ -146,33 +178,31 @@ function typeLoop() {
 typeLoop();
 
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const revealElements =
-  document.querySelectorAll(".reveal");
-
+/* ================= REVEAL ================= */
 
 const revealObserver =
   new IntersectionObserver(
     (entries, observer) => {
 
-      entries.forEach((entry) => {
+      entries.forEach(
+        (entry) => {
 
-        if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
 
-          entry.target.classList.add(
-            "visible"
-          );
+            entry.target.classList.add(
+              "visible"
+            );
 
-          observer.unobserve(
-            entry.target
-          );
+            observer.unobserve(
+              entry.target
+            );
+
+          }
 
         }
-
-      });
+      );
 
     },
     {
@@ -181,57 +211,58 @@ const revealObserver =
   );
 
 
-revealElements.forEach((element) => {
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => {
 
-  revealObserver.observe(element);
+    revealObserver.observe(
+      element
+    );
 
-});
+  });
 
 
-/* =========================================
-   ACTIVE NAVIGATION
-========================================= */
+/* ================= ACTIVE NAV ================= */
 
 const sections =
-  document.querySelectorAll("section[id]");
+  document.querySelectorAll(
+    "section[id]"
+  );
 
 
 const sectionObserver =
   new IntersectionObserver(
     (entries) => {
 
-      entries.forEach((entry) => {
-
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-
-        const id =
-          entry.target.getAttribute("id");
-
-
-        navLinks.forEach((link) => {
-
-          link.classList.remove(
-            "active"
-          );
-
+      entries.forEach(
+        (entry) => {
 
           if (
-            link.getAttribute("href") ===
-            `#${id}`
+            !entry.isIntersecting
           ) {
-
-            link.classList.add(
-              "active"
-            );
-
+            return;
           }
 
-        });
 
-      });
+          const id =
+            entry.target.id;
+
+
+          navLinks.forEach(
+            (link) => {
+
+              link.classList.toggle(
+                "active",
+                link.getAttribute(
+                  "href"
+                ) === `#${id}`
+              );
+
+            }
+          );
+
+        }
+      );
 
     },
     {
@@ -241,36 +272,147 @@ const sectionObserver =
   );
 
 
-sections.forEach((section) => {
+sections.forEach(
+  (section) => {
 
-  sectionObserver.observe(section);
+    sectionObserver.observe(
+      section
+    );
 
-});
+  }
+);
 
 
-/* =========================================
-   CLOSE MOBILE MENU ON RESIZE
-========================================= */
+/* ================= SCROLL ================= */
+
+function onScroll() {
+
+  const scrollTop =
+    window.scrollY;
+
+
+  const pageHeight =
+    document.documentElement
+      .scrollHeight -
+    window.innerHeight;
+
+
+  const percent =
+    pageHeight > 0
+      ? (scrollTop / pageHeight) * 100
+      : 0;
+
+
+  if (progress) {
+
+    progress.style.width =
+      `${percent}%`;
+
+  }
+
+
+  header?.classList.toggle(
+    "scrolled",
+    scrollTop > 20
+  );
+
+
+  backTop?.classList.toggle(
+    "show",
+    scrollTop > 550
+  );
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  onScroll,
+  {
+    passive: true
+  }
+);
+
+
+onScroll();
+
+
+/* ================= BACK TO TOP ================= */
+
+backTop?.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+);
+
+
+/* ================= RESIZE ================= */
 
 window.addEventListener(
   "resize",
   () => {
 
     if (
-      window.innerWidth > 720 &&
-      nav
+      window.innerWidth > 760
     ) {
 
-      nav.classList.remove(
-        "open"
-      );
-
-      hamburger?.setAttribute(
-        "aria-expanded",
-        "false"
-      );
+      closeMenu();
 
     }
 
   }
 );
+
+
+/* ================= SMOOTH NAVIGATION ================= */
+
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach((anchor) => {
+
+    anchor.addEventListener(
+      "click",
+      (event) => {
+
+        const target =
+          document.querySelector(
+            anchor.getAttribute("href")
+          );
+
+
+        if (!target) return;
+
+
+        event.preventDefault();
+
+
+        const offset =
+          header?.offsetHeight ||
+          70;
+
+
+        const top =
+          target.getBoundingClientRect()
+            .top +
+          window.scrollY -
+          offset +
+          1;
+
+
+        window.scrollTo({
+          top,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+  });
