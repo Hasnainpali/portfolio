@@ -17,7 +17,7 @@ export default function Projects() {
           </div>
           <div className="projects-grid">
 
-            <article className="project-card featured reveal">
+            {/* <article className="project-card featured reveal">
               <div className="project-image">
                 <img
                   src="/images/Mern.jpg"
@@ -54,7 +54,7 @@ export default function Projects() {
                   </a>
                 </div>
               </div>
-            </article>
+            </article> */}
 
             <article className="project-card reveal">
               <div className="project-image">

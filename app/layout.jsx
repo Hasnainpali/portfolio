@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import { siteConfig } from "../lib/site-config";
 
@@ -103,8 +104,8 @@ const websiteSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+   <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, "\\u003c") }}
